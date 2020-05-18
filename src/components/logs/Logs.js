@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import Log from "./LogItem";
+import LogItem from "./LogItem";
+import PreLoader from "../layout/PreLoader";
 
 const Logs = () => {
   //State
@@ -17,13 +18,12 @@ const Logs = () => {
     setLoading(true);
     const res = await fetch("http://localhost:5000/logs");
     const data = await res.json();
-    console.log(data);
     setLogs(data);
     setLoading(false);
   };
 
   if (loading) {
-    return <h4 className="center">Loading....</h4>;
+    return <PreLoader />;
   }
   return (
     <ul className="collection with-header">
@@ -33,7 +33,7 @@ const Logs = () => {
       {loading === false && logs.length === 0 ? (
         <p className="center">No logs...</p>
       ) : (
-        logs.map((log) => <Log log={log} key={log.id} />)
+        logs.map((log) => <LogItem log={log} key={log.id} />)
       )}
     </ul>
   );
