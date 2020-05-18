@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const TechItem = ({ tech }) => {
   const { firstName, lastName } = tech;
@@ -15,4 +16,8 @@ const TechItem = ({ tech }) => {
     </li>
   );
 };
+TechItem.propTypes = {
+  tech: PropTypes.object.isRequired,
+};
+
 export default TechItem;

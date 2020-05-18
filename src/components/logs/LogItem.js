@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Moment from "react-moment";
 
 const LogItem = ({ log }) => {
@@ -26,5 +27,8 @@ const LogItem = ({ log }) => {
       </div>
     </li>
   );
+};
+LogItem.propTypes = {
+  log: PropTypes.object.isRequired,
 };
 export default LogItem;
