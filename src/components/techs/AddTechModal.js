@@ -18,11 +18,7 @@ const AddTechModal = () => {
     }
   };
   return (
-    <div
-      id="add-tech-modal"
-      className="modal"
-      style={{ width: "70%", height: "70%", padding: "10px" }}
-    >
+    <div id="add-tech-modal" className="modal" style={{ padding: "10px" }}>
       <form onSubmit={onSubmit}>
         <strong>
           <h6 className="center">Add New Technician</h6>
