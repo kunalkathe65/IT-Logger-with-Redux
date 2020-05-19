@@ -8,11 +8,18 @@
       "date": "2020-05-19T08:34:38.540Z"
     },
     {
-      "id": 2,
-      "message": "New hard disk has been installed at server 009",
-      "tech": "Sara Williams",
+      "message": "Fixed HDD 5",
+      "tech": "Sam Smith",
       "attention": false,
-      "date": "2020-05-19T08:27:24.356Z"
+      "date": "2020-05-19T09:11:10.383Z",
+      "id": 2
+    },
+    {
+      "message": "New hard disk to be installed at server 009",
+      "tech": "John Doe",
+      "attention": true,
+      "date": "2020-05-19T09:11:30.882Z",
+      "id": 3
     }
   ],
   "techs": [
