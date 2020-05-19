@@ -2,24 +2,17 @@
   "logs": [
     {
       "id": 1,
-      "message": "changed hard drive on 005",
+      "message": "New Netwok card added at server 007",
+      "tech": "John Doe",
       "attention": false,
-      "date": "03-03-2020",
-      "tech": "Sam Smith"
+      "date": "2020-05-19T08:34:38.540Z"
     },
     {
       "id": 2,
-      "message": "changed hard drive on 007",
+      "message": "New hard disk has been installed at server 009",
+      "tech": "Sara Williams",
       "attention": false,
-      "date": "03-03-2019",
-      "tech": "John Doe"
-    },
-    {
-      "id": 3,
-      "message": "hard drive to be change on 015",
-      "attention": true,
-      "date": "03-06-2020",
-      "tech": "Sara Williams"
+      "date": "2020-05-19T08:27:24.356Z"
     }
   ],
   "techs": [

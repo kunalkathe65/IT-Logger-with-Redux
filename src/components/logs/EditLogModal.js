@@ -1,18 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-const EditLogModal = () => {
+import { updateLog } from "../../actions/logActions";
+
+const EditLogModal = ({ updateLog, current }) => {
   //state
   const [message, setMessage] = useState("");
   const [tech, setTech] = useState("");
   const [attention, setAttention] = useState(false);
+
+  useEffect(() => {
+    if (current) {
+      setMessage(current.message);
+      setTech(current.tech);
+      setAttention(current.attention);
+    }
+  }, [current]);
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (message === "" || tech === "") {
       M.toast({ html: "Please enter message & tech!" });
     } else {
-      console.log("added");
+      const updatedLog = {
+        id: current.id,
+        message,
+        tech,
+        attention,
+        date: new Date(),
+      };
+      updateLog(updatedLog);
+      M.toast({ html: "Log Updated!" });
 
       //resetting form
       setMessage("");
@@ -39,7 +59,6 @@ const EditLogModal = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <label htmlFor="message">Log Message</label>
           </div>
         </div>
         <div className="row">
@@ -74,11 +93,21 @@ const EditLogModal = () => {
           </p>
         </div>
         <button className="btn waves-effect waves-light blue" type="submit">
-          Enter
+          Edit
           <i className="material-icons right">send</i>
         </button>
       </form>
     </div>
   );
 };
-export default EditLogModal;
+
+EditLogModal.propTypes = {
+  current: PropTypes.object,
+  updatedLog: PropTypes.func,
+};
+
+const mapStateToProp = (state) => ({
+  current: state.log.current,
+});
+
+export default connect(mapStateToProp, { updateLog })(EditLogModal);
