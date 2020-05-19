@@ -8,26 +8,14 @@
       "date": "2020-05-19T08:34:38.540Z"
     },
     {
-      "message": "Fixed HDD 5",
+      "id": 3,
+      "message": "Server 0097 up & running",
       "tech": "Sam Smith",
       "attention": false,
-      "date": "2020-05-19T09:11:10.383Z",
-      "id": 2
-    },
-    {
-      "message": "New hard disk to be installed at server 009",
-      "tech": "John Doe",
-      "attention": true,
-      "date": "2020-05-19T09:11:30.882Z",
-      "id": 3
+      "date": "2020-05-19T12:20:20.197Z"
     }
   ],
   "techs": [
-    {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe"
-    },
     {
       "id": 2,
       "firstName": "Sam",
@@ -37,6 +25,11 @@
       "id": 3,
       "firstName": "Sara",
       "lastName": "Williams"
+    },
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "id": 4
     }
   ]
 }
